@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misubae - Your Favorite Musubi, Your Everyday Bae!</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍙</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-red: #D62828;
+            --white: #FFFFFF;
+            --accent: #FFF4E6;
+            --dark-red: #B71C1C;
+            --light-gray: #f8f8f8;
+            --text-dark: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        .bold {
+            font-weight: 600;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            height: 50px;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            overflow: hidden;
+        }
+        
+        .logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-red);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-red);
+            cursor: pointer;
+        }
+        
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('3a02557f-17f6-41d8-8d38-d9ee117c11e5.jpg');
+    background-size: cover;
+    background-position: center;
+ background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+}
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-logo {
+            height: 120px;
+            width: 300px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            overflow: hidden;
+        }
+        
+        .hero-logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .hero-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-red);
+            margin-right: 10px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-red);
+            transform: translateY(-3px);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-red);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-red);
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--white);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .mission {
+            background-color: var(--accent);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 4px solid var(--primary-red);
+        }
+        
+        /* Menu Section */
+        .menu {
+            background-color: var(--light-gray);
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .menu-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .menu-item-image {
+            height: 200px;
+            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .menu-item-content {
+            padding: 20px;
+        }
+        
+        .menu-item-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .menu-item-name {
+            font-size: 1.3rem;
+            color: var(--primary-red);
+        }
+        
+        .menu-item-price {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .menu-item-desc {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .order-btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .btn-red {
+            background-color: var(--primary-red);
+            color: var(--white);
+        }
+        
+        .btn-red:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(214, 40, 40, 0.3);
+        }
+        
+        /* Order Form Section */
+        .order-form {
+            background-color: var(--white);
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-red);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--light-gray);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            background-color: var(--accent);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: var(--white);
+            padding: 15px;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        /* Hours Section */
+        .hours {
+            background-color: var(--accent);
+        }
+        
+        .hours-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        .hours-icon {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+        
+        .hours-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .hours-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .hours-note {
+            font-style: italic;
+            color: var(--primary-red);
+            margin-top: 20px;
+            font-weight: 500;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--white);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-red);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .contact-text a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--primary-red);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            height: 60px;
+            width: 180px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+            overflow: hidden;
+        }
+        
+        .footer-logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .footer-slogan {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--white);
+            color: var(--primary-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Floating Buttons */
+        .floating-btns {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-red);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(214, 40, 40, 0.3);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .floating-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(214, 40, 40, 0.4);
+        }
+        
+        /* Order Confirmation */
+        .order-confirmation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .order-confirmation.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .confirmation-content {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .confirmation-icon {
+            font-size: 4rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .confirmation-text {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .hero-tagline {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero-tagline {
+                font-size: 1.6rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .btn-primary {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="8e9d004a-023e-4ef8-9677-3c84a7ede550.jpg" alt="Misubae Logo">
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#order">Order</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#hours">Hours</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="8e9d004a-023e-4ef8-9677-3c84a7ede550.jpg" alt="Misubae Logo">
+            </div>
+            <h1 class="hero-tagline">Your Favorite Musubi, Your Everyday Bae!</h1>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">View Menu</a>
+                <a href="#order" class="btn btn-secondary">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Misubae was born from a love for Japanese cuisine and Filipino creativity. Our founders, passionate about bringing affordable, flavorful, and fresh food to everyone, created a unique fusion that celebrates both cultures.</p>
+                    
+                    <div class="mission">
+                        <p class="bold">Our mission is simple: to serve affordable, flavorful, and fresh musubi that brings joy to every bite.</p>
+                    </div>
+                    
+                    <p>Each musubi is carefully prepared with the freshest ingredients, ensuring every bite is a memorable experience. From our kitchen to your hands, we put love into every wrap.</p>
+                    
+                    <p>We believe that great food should be accessible to all, which is why we've dedicated ourselves to crafting the perfect musubi - a delightful combination of Japanese tradition and Filipino flair.</p>
+                </div>
+                <div class="about-image">
+                    <img src="203fac10-18c2-4735-b8ee-6dd5e9546049.jpg" alt="About Misubae">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">Our Menu</h2>
+            <div class="menu-grid">
+                <!-- OG Teriyaki -->
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="649a1f4c-bca2-451d-87af-1306e2b4990f.jpg" alt="OG Teriyaki Musubi">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3 class="menu-item-name">OG Teriyaki</h3>
+                            <span class="menu-item-price">₱40</span>
+                        </div>
+                        <p class="menu-item-desc">Sweet and savory perfection</p>
+                    </div>
+                </div>
+                
+                <!-- Egglicious -->
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="24e54b02-f7bb-44ac-b45d-d5c17c5f1a4e.jpg" alt="Egglicious Musubi">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3 class="menu-item-name">Egglicious</h3>
+                            <span class="menu-item-price">₱45</span>
+                        </div>
+                        <p class="menu-item-desc">Soft egg with flavorful rice</p>
+                    </div>
+                </div>
+                
+                <!-- Cheesylicious -->
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="afa3ba90-fa55-4bad-8a04-0fba8ae90739.jpg" alt="Cheesylicious Musubi">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3 class="menu-item-name">Cheesylicious</h3>
+                            <span class="menu-item-price">₱55</span>
+                        </div>
+                        <p class="menu-item-desc">Melty and creamy goodness</p>
+                    </div>
+                </div>
+                
+                <!-- Hot n Spicy -->
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="4863c868-6170-49e9-9947-486da2a48b44.jpg" alt="Hot n Spicy Musubi">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3 class="menu-item-name">Hot n Spicy</h3>
+                            <span class="menu-item-price">₱55</span>
+                        </div>
+                        <p class="menu-item-desc">A bold kick in every bite</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-btn-container">
+                <a href="https://www.facebook.com/share/14V1kkztPJ8/" target="_blank" class="btn btn-red">Message to Order</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order" class="order-form">
+        <div class="container">
+            <h2 class="section-title">Place Your Order</h2>
+            <div class="form-container">
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number</label>
+                        <input type="tel" id="contactNumber" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="flavor">Flavor</label>
+                        <select id="flavor" class="form-control" required>
+                            <option value="">Select a flavor</option>
+                            <option value="og-teriyaki">OG Teriyaki - ₱40</option>
+                            <option value="egglicious">Egglicious - ₱45</option>
+                            <option value="cheesylicious">Cheesylicious - ₱55</option>
+                            <option value="hot-n-spicy">Hot n Spicy - ₱55</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" class="form-control" min="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Pick-up/Delivery</label>
+                        <div>
+                            <input type="radio" id="pickup" name="delivery" value="pickup" checked>
+                            <label for="pickup" style="display: inline; margin-right: 15px;">Pick-up</label>
+                            
+                            <input type="radio" id="delivery" name="delivery" value="delivery">
+                            <label for="delivery" style="display: inline;">Delivery</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Notes/Message</label>
+                        <textarea id="notes" class="form-control" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-red" style="width: 100%;">Submit Order</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="5c3740a8-b01d-46e4-8fb0-a8c136399551.jpg" alt="Freshly Made Musubi">
+                    <div class="gallery-caption">Freshly Made, Always Misubae!</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="6bf9e13c-b016-40b9-8dca-574096d34e2f.jpg" alt="Snack Time with Bae">
+                    <div class="gallery-caption">Snack Time with Bae!</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="6ad64bab-2941-4a75-91cd-e74316b3426e.jpg" alt="Perfect for Any Occasion">
+                    <div class="gallery-caption">Perfect for Any Occasion</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="adb6b4df-35d7-4c94-8eab-1012ac0dc7c4.jpg" alt="Made with Love">
+                    <div class="gallery-caption">Made with Love</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours Section -->
+    <section id="hours" class="hours">
+        <div class="container">
+            <h2 class="section-title">Business Hours</h2>
+            <div class="hours-container">
+                <div class="hours-icon">
+                    <i class="far fa-clock"></i>
+                </div>
+                <ul class="hours-list">
+                    <li><strong>Monday:</strong> 7:00 AM – 4:00 PM</li>
+                    <li><strong>Wednesday:</strong> 7:00 AM – 4:00 PM</li>
+                    <li><strong>Friday:</strong> 7:00 AM – 4:00 PM</li>
+                    <li style="color: var(--dark-red);"><strong>Closed:</strong> Tuesday, Thursday, Saturday, Sunday</li>
+                </ul>
+                <p class="hours-note">Visit us during our open days to grab your favorite musubi! 🍙❤️</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <a href="tel:09399351588">09399351588</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <a href="mailto:misubae1021@gmail.com">misubae1021@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="contact-text">
+                            <a href="https://www.instagram.com/_misubae_?igsh=MXA3ZHZzYnlzNGYycQ==" target="_blank">@_misubae_</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div class="contact-text">
+                            <a href="https://www.facebook.com/share/14V1kkztPJ8/" target="_blank">Misubae Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Your Email</label>
+                            <input type="email" id="contactEmail" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Your Message</label>
+                            <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-red">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="8e9d004a-023e-4ef8-9677-3c84a7ede550.jpg" alt="Misubae Logo">
+                </div>
+                <p class="footer-slogan">Made with Love, Wrapped for Your Bae.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/_misubae_?igsh=MXA3ZHZzYnlzNGYycQ==" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/14V1kkztPJ8/" target="_blank" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+                <p class="copyright">© 2025 Misubae. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-btns">
+        <a href="#order" class="floating-btn">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a href="#home" class="floating-btn scroll-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Order Confirmation -->
+    <div class="order-confirmation" id="orderConfirmation">
+        <div class="confirmation-content">
+            <div class="confirmation-icon">✅</div>
+            <h3 class="confirmation-text">Thank you for your order!<br>We'll prepare your Misubae right away! 🍙</h3>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('active');
+            });
+        });
+        
+        // Order Form Submission
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show confirmation message
+            const confirmation = document.getElementById('orderConfirmation');
+            confirmation.classList.add('active');
+            
+            // Hide confirmation after 3 seconds
+            setTimeout(function() {
+                confirmation.classList.remove('active');
+            }, 3000);
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Scroll to top functionality
+        document.querySelector('.scroll-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '5px 0';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
